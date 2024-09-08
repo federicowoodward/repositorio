@@ -1,0 +1,68 @@
+/* src/styles/globals.css */
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Lexend+Zetta:wght@100..900&family=Lily+Script+One&family=Long+Cang&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --fondo1: #070c0d;
+  --fondo2: #14261b;
+  --text: #84aebf;
+  --object: #225459;
+  --shadow: #4d818c;
+  --offwhite: #f5f5f5;
+  .long-cang-regular {
+    font-family: "Long Cang", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .lily-script-one-regular {
+    font-family: "Lily Script One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .roboto-thin {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  .lexend-deca {
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .lexend-zetta {
+    font-family: "Lexend Zetta", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .Ctext {
+    color: var(--text);
+  }
+  .Coffwhite {
+    color: var(--offwhite);
+  }
+  .Cobject {
+    color: var(--object);
+  }
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+#__next {
+  height: 100%;
+}
+
+.body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--fondo1);
+}
