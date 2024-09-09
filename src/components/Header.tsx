@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "../styles/Header.module.css";
-import Switch from "./Switch";
+// import Switch from "./Switch";
 import { useAppContext } from "@/context/AppContext";
 import React from "react";
 
@@ -78,7 +78,7 @@ export default function Header({ position }: HeaderProps) {
           <div className={styles.progressLineDown}></div>
         </div>
       </div>
-      <Switch />
+      {/* <Switch /> */}
     </div>
   );
 }
