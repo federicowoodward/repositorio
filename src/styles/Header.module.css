@@ -5,6 +5,11 @@
     margin: auto;
     width: 1180px;           
     height: 100px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    background-color: var(--fondo1);
+    z-index: 10;
 }
 .logoh1 {
     font-size: 60px;

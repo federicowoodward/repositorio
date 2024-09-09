@@ -1,12 +1,13 @@
 .homeElements {
     width: 1180px;
-    margin: 10% auto;
+    margin: 0 auto;
+    padding-top: 13%;
 }
 .homeElements h1 {
     font-size: 80px;
 }
 .wordSwap p {
-    font-size: 40px;
+    font-size: 45px;
     margin-left: 13px;
 }
 .section {
@@ -17,5 +18,25 @@
     width: 720px;
     height: 225px;
     object-fit: cover;
-    opacity: 0.30;
+    opacity: 0.35;
+}
+.skillsSwap {
+    margin-top: 10vh;
+    width: 1180px;
+    height: 150px;
+}
+.programmingLanguage {
+    width: 90px;
+    height: 130px;
+    overflow: hidden;
+}
+.programmingLanguage img{
+    width: 90px;
+}
+.knowMeButtonContainer {
+    width: 1120px;
+    display: flex;
+    justify-content: center;
+    margin: 160px 0 200px 0;
+    transform: scale(1.5);
 }
