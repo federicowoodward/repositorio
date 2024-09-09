@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "../styles/Header.module.css";
-import Switch from "./Switch.tsx";
+import Switch from "./Switch";
 import { useAppContext } from "@/context/AppContext";
 import React from "react";
 
