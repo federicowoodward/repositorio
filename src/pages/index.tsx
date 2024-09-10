@@ -21,7 +21,7 @@ export default function Index() {
     setScrollPercentage(scrollPercentageNoMoreThat100);
   };
 
-  useEffect(() => {
+  useEffect(() => { 
     window.addEventListener("scroll", handleScroll);
 
     return () => {

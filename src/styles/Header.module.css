@@ -1,3 +1,11 @@
+.headerContainer {
+    width: 100%;  
+    background-color: var(--fondo1);
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    right: 0;
+}
 .header {
     display: flex;
     flex-direction: row;     
@@ -5,11 +13,6 @@
     margin: auto;
     width: 1180px;           
     height: 100px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    background-color: var(--fondo1);
-    z-index: 10;
 }
 .logoh1 {
     font-size: 60px;
@@ -24,11 +27,14 @@
     width: 100%;
     position: relative;
 }
+.navbar p {
+    letter-spacing: 4px;
+}
 .progressLine {
     position: absolute;
-    bottom: -30px;
-    left: 60px;
-    right: 60px;
+    bottom: -40px;
+    left: -20px;
+    right: -20px;
 }
 .progressLineDown {
     width: 100%;

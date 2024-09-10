@@ -1,0 +1,8 @@
+.footer {
+    height: 100px;
+    background-color: var(--offwhite);
+    padding: 20px 150px 0 150px;
+}
+.footer p {
+    text-align: center;
+}

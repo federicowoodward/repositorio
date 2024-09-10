@@ -1,0 +1,61 @@
+.container {
+  margin: 40px auto;
+  max-width: 1120px;
+}
+
+.box {
+  margin: 10px auto;
+}
+.box button {
+  font-family: "Lexend Zetta", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.projectBoxContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.projectBox {
+  height: 170px;
+  width: 350px;
+  margin: 0 0 5px 0;
+  border: 0.1px solid black;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+}
+
+.onHover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease-in-out;
+  background-color: #4d818c70;
+  padding: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.onHover p,
+.onHover h3 {
+  opacity: 1;
+  color: var(--offwhite);
+}
+.onHover h3 {
+  font-family: "Roboto", system-ui;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.projectBox:hover .onHover {
+  transform: translateY(0);
+}

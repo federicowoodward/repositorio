@@ -9,6 +9,7 @@
 :root {
   --fondo1: #070c0d;
   --fondo2: #14261b;
+  --fondo1op: #070c0d30;
   --text: #84aebf;
   --object: #225459;
   --shadow: #4d818c;
@@ -54,19 +55,32 @@
   .Cobject {
     color: var(--object);
   }
+  .Cfondo1 {
+    color: var(--fondo1);
+  }
+  .Cfondo2 {
+    color: var(--fondo2);
+  }
 }
 
-html,
 body {
+  min-height: 100vh;
+}
+html, body {
   height: 100%;
-  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #__next {
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .body {
   width: 100%;
   background-color: var(--fondo1);
+  margin: 0;
+  padding: 0;
 }
