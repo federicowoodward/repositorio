@@ -1,16 +1,17 @@
 "use client";
 
+import React from "react";
 import styles from "../styles/Header.module.css";
 import SwitchLanguage from "./SwitchLanguage";
 import { useAppContext } from "@/context/AppContext";
-import React from "react";
+import RenderTextByToLanguage from "@/utils/textRenderByLanguage";
 
 interface HeaderProps {
   position: string;
 }
 
 export default function Header({ position }: HeaderProps) {
-  const { language, scrollPercentage } = useAppContext();
+  const { scrollPercentage } = useAppContext();
 
   const getProgressPercentage = (position: string) => {
     switch (position) {
@@ -47,28 +48,28 @@ export default function Header({ position }: HeaderProps) {
               position !== "home" ? "Coffwhite" : "Ctext"
             }`}
           >
-            {language === "EN" ? "HOME" : "INICIO"}
+            {RenderTextByToLanguage("HOME", "INICIO")}
           </p>
           <p
             className={`lexend-zetta ${
               position !== "about" ? "Coffwhite" : "Ctext"
             }`}
           >
-            {language === "EN" ? "ABOUT ME" : "SOBRE MI"}
+            {RenderTextByToLanguage("ABOUT ME", "SOBRE MI")}
           </p>
           <p
             className={`lexend-zetta ${
               position !== "projects" ? "Coffwhite" : "Ctext"
             }`}
           >
-            {language === "EN" ? "PROJECTS" : "PROYECTOS"}
+            {RenderTextByToLanguage("PROJECTS", "PROYECTOS")}
           </p>
           <p
             className={`lexend-zetta ${
               position !== "contact" ? "Coffwhite" : "Ctext"
             }`}
           >
-            {language === "EN" ? "LET'S TALK!" : "HABLEMOS!"}
+            {RenderTextByToLanguage("LET'S TALK!", "HABLEMOS!")}
           </p>
           <div className={styles.progressLine}>
             <div

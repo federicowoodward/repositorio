@@ -1,6 +1,12 @@
 import SkillsPngs from "@/public/skills/AskillsImports";
+import { StaticImageData } from "next/image";
 
-const items = [
+interface PageItem {
+  page: number;
+  items: { png: StaticImageData; text: string }[]; 
+}
+
+const items: PageItem[] = [
   { page: 1, items: [
     { png: SkillsPngs.HTML5, text: "HTML5" },
     { png: SkillsPngs.JavaScript, text: "JavaScript" },
@@ -42,4 +48,10 @@ const items = [
   ] },
 ];
 
-export default items;
+export function getItems(page: number) {
+  const pageItems = items.find((p) => p.page === page);
+  return pageItems ? pageItems.items : [];
+}
+export function itemsLength() {
+  return items.length;
+}

@@ -1,5 +1,5 @@
 .container {
-  margin: 40px auto;
+  margin: 20px auto;
   max-width: 1120px;
 }
 
@@ -17,6 +17,29 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 1vh;
+  padding-right: 10px;
+}
+
+.projectBoxContainer::-webkit-scrollbar {
+  width: 10px;
+}
+
+.projectBoxContainer::-webkit-scrollbar-track {
+  background-color: var(--fondo1);
+  border-radius: 10px;
+}
+
+.projectBoxContainer::-webkit-scrollbar-thumb {
+  background-color: var(--shadow);
+  border-radius: 10px;
+}
+
+.projectBoxContainer::-webkit-scrollbar-thumb:hover {
+  background-color: var(--text); 
 }
 
 .projectBox {

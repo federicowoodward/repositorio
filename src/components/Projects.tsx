@@ -50,7 +50,7 @@ export default function Projects() {
           </p>
         )}
       </div>
-        <ProjectsContainer />
+      <ProjectsContainer />
     </div>
   );
 }

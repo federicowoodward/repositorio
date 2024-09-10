@@ -1,35 +1,10 @@
 "use client";
 
 import React from "react";
-import { useAppContext } from "@/context/AppContext";
-
-function getWordsForLanguage(lang: string) {
-  const wordsEn = [
-    "PROGRAMMER",
-    "DEVELOPER",
-    "SOFTWARE DEVELOPER",
-    "ENTHUSIASTIC",
-  ];
-  const wordsEs = [
-    "PROGRAMADOR",
-    "DESARROLLADOR DE SOFTWARE",
-    "ENTUSIASTA",
-    "DESARROLLADOR",
-  ];
-  switch (lang) {
-    case "EN":
-      return wordsEn;
-    case "ES":
-      return wordsEs;
-    default:
-      console.error("Unknown language");
-      return wordsEn;
-  }
-}
+import getWordsForLanguage from "@/utils/getWordsForSwapEffect";
 
 export default function WordSwap() {
-  const { language } = useAppContext();
-  const currentWords = getWordsForLanguage(language);
+  const currentWords = getWordsForLanguage();
   const [word, setWord] = React.useState(currentWords[0]);
 
   React.useEffect(() => {
@@ -46,7 +21,7 @@ export default function WordSwap() {
     return () => {
       clearInterval(interval);
     };
-  }, [language]);
+  }, [currentWords]);
 
   return <p className="long-cang-regular Coffwhite">{word}</p>;
 }

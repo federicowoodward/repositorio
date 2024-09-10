@@ -1,3 +1,4 @@
+import RenderTextByToLanguage from "@/utils/textRenderByLanguage";
 import React from "react";
 import styled from "styled-components";
 
@@ -21,7 +22,7 @@ const SendButton = () => {
             </svg>
           </div>
         </div>
-        <span>Send</span>
+        <span>{`${RenderTextByToLanguage("Send", "Enviar")}`}</span>
       </button>
     </StyledWrapper>
   );
@@ -29,59 +30,58 @@ const SendButton = () => {
 
 const StyledWrapper = styled.div`
   button {
-  font-family: inherit;
-  font-size: 20px;
-  background: var(--object);
-  color: white;
-  padding: 0.7em 5em;
-  padding-left: 4.7em;
-  display: flex;
-  align-items: center;
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: all 0.2s;
-  cursor: pointer;
-}
-
-button span {
-  display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
-}
-
-button svg {
-  display: block;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-button:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
-}
-
-button:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-button:hover span {
-  transform: translateX(10em);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-@keyframes fly-1 {
-  from {
-    transform: translateY(0.1em);
+    font-family: inherit;
+    font-size: 20px;
+    background: var(--object);
+    color: white;
+    padding: 0.7em 5em;
+    padding-left: 4.7em;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.2s;
+    cursor: pointer;
   }
 
-  to {
-    transform: translateY(-0.1em);
+  button span {
+    display: block;
+    margin-left: 0.3em;
+    transition: all 0.3s ease-in-out;
   }
-}
 
+  button svg {
+    display: block;
+    transform-origin: center center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  button:hover .svg-wrapper {
+    animation: fly-1 0.6s ease-in-out infinite alternate;
+  }
+
+  button:hover svg {
+    transform: translateX(1.2em) rotate(45deg) scale(1.1);
+  }
+
+  button:hover span {
+    transform: translateX(10em);
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  @keyframes fly-1 {
+    from {
+      transform: translateY(0.1em);
+    }
+
+    to {
+      transform: translateY(-0.1em);
+    }
+  }
 `;
 
 export default SendButton;
