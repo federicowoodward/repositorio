@@ -7,14 +7,15 @@ import { useAppContext } from "@/context/AppContext";
 import RenderTextByToLanguage from "@/utils/textRenderByLanguage";
 
 interface HeaderProps {
-  position: string;
+  scrollToSection: (sectionId: string) => void;
 }
 
-export default function Header({ position }: HeaderProps) {
-  const { scrollPercentage } = useAppContext();
+export default function Header({ scrollToSection }: HeaderProps) {
+  const { scrollPercentage, activeSection } = useAppContext();
 
-  const getProgressPercentage = (position: string) => {
-    switch (position) {
+  React.useEffect(() => {}, [activeSection]);
+  const getProgressPercentage = (section: string) => {
+    switch (section) {
       case "home":
         return 22;
       case "about":
@@ -30,57 +31,61 @@ export default function Header({ position }: HeaderProps) {
     }
   };
 
-  const progressPercentage = getProgressPercentage(position);
-
-  React.useEffect(() => {}, [scrollPercentage]);
+  const progressPercentage = getProgressPercentage(activeSection);
 
   return (
-    <div className={styles.headerContainer}>
-      <div className={styles.header}>
-        <div className="logo">
-          <h1 className={`${styles.logoh1} lily-script-one-regular Cobject`}>
-            FW
-          </h1>
-        </div>
-        <div className={styles.navbar}>
-          <p
-            className={`lexend-zetta ${
-              position !== "home" ? "Coffwhite" : "Ctext"
-            }`}
-          >
-            {RenderTextByToLanguage("HOME", "INICIO")}
-          </p>
-          <p
-            className={`lexend-zetta ${
-              position !== "about" ? "Coffwhite" : "Ctext"
-            }`}
-          >
-            {RenderTextByToLanguage("ABOUT ME", "SOBRE MI")}
-          </p>
-          <p
-            className={`lexend-zetta ${
-              position !== "projects" ? "Coffwhite" : "Ctext"
-            }`}
-          >
-            {RenderTextByToLanguage("PROJECTS", "PROYECTOS")}
-          </p>
-          <p
-            className={`lexend-zetta ${
-              position !== "contact" ? "Coffwhite" : "Ctext"
-            }`}
-          >
-            {RenderTextByToLanguage("LET'S TALK!", "HABLEMOS!")}
-          </p>
-          <div className={styles.progressLine}>
-            <div
-              className={styles.progressLineUp}
-              style={{ width: `${scrollPercentage}%` }}
-            ></div>
-            <div className={styles.progressLineDown}></div>
+    <section>
+      <div className={styles.headerContainer}>
+        <div className={styles.header}>
+          <div className="logo">
+            <h1 className={`${styles.logoh1} lily-script-one-regular Cobject`}>
+              FW
+            </h1>
           </div>
+          <div className={styles.navbar}>
+            <p
+              className={`lexend-zetta ${
+                activeSection !== "home" ? "Coffwhite" : "Ctext"
+              }`}
+              onClick={() => scrollToSection("home")}
+            >
+              {RenderTextByToLanguage("HOME", "INICIO")}
+            </p>
+            <p
+              className={`lexend-zetta ${
+                activeSection !== "about" ? "Coffwhite" : "Ctext"
+              }`}
+              onClick={() => scrollToSection("about")}
+            >
+              {RenderTextByToLanguage("ABOUT ME", "SOBRE MI")}
+            </p>
+            <p
+              className={`lexend-zetta ${
+                activeSection !== "projects" ? "Coffwhite" : "Ctext"
+              }`}
+              onClick={() => scrollToSection("projects")}
+            >
+              {RenderTextByToLanguage("PROJECTS", "PROYECTOS")}
+            </p>
+            <p
+              className={`lexend-zetta ${
+                activeSection !== "contact" ? "Coffwhite" : "Ctext"
+              }`}
+              onClick={() => scrollToSection("contact")}
+            >
+              {RenderTextByToLanguage("LET'S TALK!", "HABLEMOS!")}
+            </p>
+            <div className={styles.progressLine}>
+              <div
+                className={styles.progressLineUp}
+                style={{ width: `${scrollPercentage}%` }}
+              ></div>
+              <div className={styles.progressLineDown}></div>
+            </div>
+          </div>
+          <SwitchLanguage />
         </div>
-        <SwitchLanguage />
       </div>
-    </div>
+    </section>
   );
 }

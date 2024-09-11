@@ -1,3 +1,8 @@
+.topFilling {
+  height: 100px;
+  background-color: var(--fondo1);
+  width: 100%;
+}
 .container {
     margin: auto;
     background-color: var(--fondo2);

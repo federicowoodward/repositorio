@@ -25,6 +25,7 @@ import Docker from "./Docker.png";
 import Figma from "./Figma.png";
 import Firebase from "./Firebase.png";
 import Gitlab from "./Gitlab.png";
+import Looker from "./icons8-google-looker-48.png";
 
 const SkillsPngs = {
   HTML5,
@@ -54,6 +55,7 @@ const SkillsPngs = {
   Figma,
   Firebase,
   Gitlab,
+  Looker
 };
 
 export default SkillsPngs;

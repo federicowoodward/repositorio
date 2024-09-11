@@ -1,14 +1,19 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import style from "../styles/Home.module.css";
 import milaImg from "../public/mila.jpg";
 import WordSwap from "./WordSwap";
 import Button from "./ButtonKnowMe";
 
-export default function Home() {
+interface HomeProps {
+  scrollToSection: (sectionId: string) => void;
+}
+
+export default function Home({ scrollToSection }: HomeProps) {
   return (
-    <div className={style.homeElements}>
+    <div id="home" className={style.homeElements}>
       <h1 className="lexend-zetta Ctext">FEDE WOODWARD</h1>
       <div className={style.section}>
         <div className={style.wordSwap}>
@@ -19,7 +24,7 @@ export default function Home() {
         </div>
       </div>
       <div className={style.knowMeButtonContainer}>
-        <Button />
+        <Button onClick={() => scrollToSection("about")} />
       </div>
     </div>
   );

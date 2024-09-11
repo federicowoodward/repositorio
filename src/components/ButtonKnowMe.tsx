@@ -2,10 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import RenderTextByToLanguage from "@/utils/textRenderByLanguage";
 
-const Button = () => {
+interface ButtonProps {
+  onClick: () => void;
+}
+
+const Button = ({ onClick }: ButtonProps) => {
   return (
     <StyledWrapper>
-      <button>{RenderTextByToLanguage("KNOW ME!", "CONOCEME!")}</button>
+      <button onClick={onClick}>
+        {RenderTextByToLanguage("KNOW ME!", "CONÓCEME!")}
+      </button>
     </StyledWrapper>
   );
 };

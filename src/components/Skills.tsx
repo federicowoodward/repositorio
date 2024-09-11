@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from "react";
 import { Pagination } from "@mui/material";
 import styles from "../styles/Skills.module.css";
-import { getItems, itemsLength } from "@/utils/getItemsSkillsCarrousel";
+import { getItems, getTotalPages } from "@/utils/getItemsSkillsCarrousel";
 import Image from "next/image";
 
 export default function Skills() {
@@ -15,7 +15,7 @@ export default function Skills() {
   useEffect(() => {
     const interval = setInterval(() => {
       setPage((prevPage) => {
-        const maxPage = itemsLength();
+        const maxPage = getTotalPages();
         let newPage = prevPage + direction;
 
         if (newPage > maxPage) {
@@ -52,7 +52,7 @@ export default function Skills() {
         ))}
       </div>
       <Pagination
-        count={itemsLength()}
+        count={getTotalPages()}
         page={page}
         onChange={handlePageChange}
         className={styles.pagination}

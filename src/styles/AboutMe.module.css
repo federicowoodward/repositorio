@@ -1,6 +1,7 @@
 .container {
   width: 1120px;
   margin: auto;
+  padding-top: 50px;
 }
 .titleContainer {
   display: flex;
@@ -29,11 +30,16 @@
 }
 .text {
   color: var(--offwhite);
-  letter-spacing: 1px;
+  letter-spacing: 0.2px;
   text-align: center;
   line-height: 30px;
   padding: 50px 30px;
 }
 .textContainer {
   padding: 20px;
+}
+.roboto-light {
+  font-family: "Roboto", system-ui;
+  font-weight: 300;
+  font-style: normal;
 }

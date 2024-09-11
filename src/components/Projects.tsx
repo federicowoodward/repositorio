@@ -10,6 +10,8 @@ export default function Projects() {
 
   return (
     <div className={styles.container}>
+      <div className={styles.topFilling}>
+      </div>
       <div className={styles.titleContainer}>
         {language === "EN" ? (
           <h2 className="lexend-zetta Ctext">PROJECTS</h2>
